@@ -1,0 +1,26 @@
+{
+    "00001" : {
+        "name" : "Cube AIM EX 29",
+        "cost" : 52386,
+        "description" : "Горный велосипед. Пригоден для поездок в любую погоду",
+        "image" : "img/cube_aim_ex_29.jpg"
+    },
+    "00002" : {
+        "name" : "Merida Big NINE 500",
+        "cost" : 42850,
+        "description" : "Велосипед подходит, как детям так и взрослым",
+        "image" : "img/merida_big_nine_500.jpg"
+    },
+    "00003" : {
+        "name" : "Stels Navigator 720 D V010",
+        "cost" : 25670,
+        "description" : "Бюджетный велосипед на все случаи жизни",
+        "image" : "img/stels_navigator_720_d_v010.jpg"
+    },
+    "00004" : {
+        "name" : "Stinger Element PRO 29 SE",
+        "cost" : 35990,
+        "description" : "Велосипед для настоящих профи",
+        "image" : "img/stinger_element_pro_29_se.jpg"
+    }
+}    
