@@ -29,6 +29,13 @@ $.getJSON('goods.json', function (data) {
             $('.minus').on('click', minusGoods);
             $('.delete').on('click', deleteGoods);
         }
+        if (!$.isEmptyObject(cart)) {
+            let summ = 0;
+            for (let key in cart) {
+                summ += goods[key].cost * cart[key];
+            }
+            $('#my-cart').html('Итого: ${summ}')
+        }
 
     }
     function plusGoods() {
