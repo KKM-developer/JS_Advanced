@@ -22,5 +22,7 @@ prom.then(data => {
     })
 }).then(clientData => {
     console.log('Данные получены ', clientData)
+}).catch(err => {
+    console.log('Eror', err)
 })
 
