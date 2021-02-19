@@ -14,6 +14,7 @@ $.getJSON('goods.json', function (data) {
         }
         else {
             let out = '';
+            let summ = 0;
             for (let key in cart) {
                 out += '<button class="delete" data-art="'+key+'">X</button>';
                 out += '<img src="' + goods[key].image + '" width="48">';
@@ -23,12 +24,15 @@ $.getJSON('goods.json', function (data) {
                 out += '<button class="plus" data-art="'+key+'">+</button>';
                 out += cart[key] * goods[key].cost;
                 out += '<br>';
+                summ += goods[key].cost * cart[key];
             }
+            out += '<br><p>Итого: </p>'+summ
             $('#my-cart').html(out);
             $('.plus').on('click', plusGoods);
             $('.minus').on('click', minusGoods);
             $('.delete').on('click', deleteGoods);
         }
+
 
     }
     function plusGoods() {
