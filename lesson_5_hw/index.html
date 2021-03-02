@@ -44,10 +44,9 @@
                 <span>there are {{id.quantity}} of this items in the cart</span>
                 <button @click="removeFromCart(id)">remove from cart 🛒</button>
             </div>
-        </div>        
-        <div data-id="cart"></div>
-        <input type="search" placeholder="Search" v-model="searchGoods">
-        <button @click="filterGoods">Search</button>
+        </div>
+        <cart-part @click="removeFromCart(id)"></cart-part>      
+        <add-search v-model="searchGoods" @click="filterGoods"></add-search>
         <div data-id="goods">
             <div class="goods-item" v-for="item in filteredGoods">
                 <h3>{{item.productName}}</h3>

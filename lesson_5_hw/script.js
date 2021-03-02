@@ -131,6 +131,40 @@
 
 const BASE_URL = 'https://mock-api-builder.vercel.app/api/schema/get';
 
+Vue.component('add-search', {
+  props: ['searchGoods'],
+  template: 
+    `<div data-id="cart">
+      <input type="search" placeholder="Search" 
+        v-bind:value="searchGoods"
+        v-on:input="$emit('input', $event.target.value)"
+      >
+      <button @click="callback($event)">Search</button>
+    </div>`,
+  methods: {
+    callback: function(e) {
+      this.$emit('click', e);
+    }
+  }   
+});
+
+Vue.component('cart-part',{
+  template:`
+    <div data-id="cart" v-if="showCart">
+      <div class="goods-item" v-for="id in cartItems">
+          <h3>{{id.productName}}</h3>
+          <span>{{id.price}}$</span>
+          <span>there are {{id.quantity}} of this items in the cart</span>
+          <button @click="callback($event)">remove from cart 🛒</button>
+      </div>
+  </div>`,
+  methods: {
+    callback: function(e) {
+      this.$emit('click', e);
+    }    
+  }
+})
+
 const app = new Vue({
   el: '#root',
   data: {
