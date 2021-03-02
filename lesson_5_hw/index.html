@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="root">
+        <!-- <h1>Hello, {{firstName}} {{lastName}}!</h1>
+        <sub>{{datetime}}</sub>
+
+        <hr/>
+
+        <label>
+            First name
+            <input type="text" v-model="firstName" placeholder="Enter your first name here">
+        </label>
+
+        <input type="text" v-model="lastName" placeholder="Enter your last name here">
+
+        <button v-if="notEmptyNames">Send</button>
+
+        <hr/>
+
+        <div v-if="firstName.trim().length === 0">First name should always persist!</div>
+        <div v-if="lastName.trim().length === 0">Last name should always persist!</div>
+
+        <hr/>
+
+        <div class="todos-container">
+            <div class="todo-item" v-for="todo in todosList" @click="handleClick(todo.id)">
+                <h3>{{todo.title}}</h3> <sup>{{todo.completed ? "ok" : "in progress"}}</sup>
+                <hr/>
+            </div>
+        </div> -->
+        <button @click="isVisibleCart()">{{showCart ? "Close cart" : "Show cart"}}</button>
+        <div data-id="cart" v-if="showCart">
+            <div class="goods-item" v-for="id in cartItems">
+                <h3>{{id.productName}}</h3>
+                <span>{{id.price}}$</span>
+                <span>there are {{id.quantity}} of this items in the cart</span>
+                <button @click="removeFromCart(id)">remove from cart 🛒</button>
+            </div>
+        </div>
+        <cart-part @click="removeFromCart(id)"></cart-part>      
+        <add-search v-model="searchGoods" @click="filterGoods"></add-search>
+        <div data-id="goods">
+            <div class="goods-item" v-for="item in filteredGoods">
+                <h3>{{item.productName}}</h3>
+                <span>{{item.price}}$</span>
+                <button @click="addToCart(item)">add to cart 🛒</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
